@@ -1,4 +1,4 @@
-++ Fundamentals
+C++ Fundamentals
 
 This repository documents my C++ journey as I build a strong understanding of the language and its core concepts.
 
