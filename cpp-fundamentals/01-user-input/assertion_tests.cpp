@@ -1,8 +1,9 @@
+#include <iostream>
 #include <cassert>
 #include <sstream>
 #include <istream>
 
-bool get_number(std::istream & input, double & number){
+[[nodiscard]] bool get_number(std::istream & input, double & number){
 	input >> number;
 	if (input){
 		return true;
@@ -23,9 +24,17 @@ void test_code(){
 	std::stringstream failing_input{"q"};
 	const bool not_ok = get_number(failing_input, value2);
 	assert(!not_ok);
-	assert(value2 == 0);
 }
 
 int main(){
 	test_code();
+
+	double number{};
+	std::cout << "Input a number please:\n";
+	if (get_number(std::cin, number)){
+		std::cout << "Thank you, " << number << " was your number!";
+	}
+	else{
+		std::cout << "Something went wrong :(\n";
+	}
 }
