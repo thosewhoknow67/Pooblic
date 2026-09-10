@@ -1,13 +1,16 @@
 #include <istream>
 #include <iostream>
-#include <exception>
+#include <stdexcept>
 
 double get_number(std::istream & input){
 	double number{};
 	input >> number;
 
 	if(input){
-		return number;
+		if(number >= 0.0){
+			return number;
+		}
+		throw std::invalid_argument("Please provide a non negative number.");
 	}
 	throw std::exception{};
 }
