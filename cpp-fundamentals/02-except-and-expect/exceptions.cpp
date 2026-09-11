@@ -2,6 +2,7 @@
 #include <iostream>
 #include <stdexcept>
 
+//get_number function
 double get_number(std::istream & input){
 	double number{};
 	input >> number;
