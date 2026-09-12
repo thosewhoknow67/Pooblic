@@ -4,7 +4,7 @@
 
 std::expected<double, std::string> get_number(std::istring & input){
 	double number{};
-	input >> numeber;
+	input >> number;
 	if(input){
 		return number;
 	}
