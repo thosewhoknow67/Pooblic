@@ -12,14 +12,14 @@ std::expected<double, std::string> get_number(std::istream & input){
 }
 int main(){
 	std::cout << "Please enter a number: \n";
-	auto number = get_number(std::cin);
 	while (true){
-		if (number){
+	auto number = get_number(std::cin);
+		if (number.has_value()){
 			std::cout << "Thank you, your number was " << number.value();
-			break;
 		}
 		else {
 			std::cout << number.error() << "\n";
+			break;
 		}						
 	}
 }
