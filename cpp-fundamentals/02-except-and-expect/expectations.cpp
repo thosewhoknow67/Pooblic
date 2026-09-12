@@ -13,7 +13,7 @@ std::expected<double, std::string> get_number(std::istring & input){
 int main(){
 	std::cout << "Please enter a number: \n";
 	auto number = get_number(std::cin);
-        if (number.has_value()){
+        if (number){
 		std::cout << "Thank you, your number was " << number;
 	}
 	else {
