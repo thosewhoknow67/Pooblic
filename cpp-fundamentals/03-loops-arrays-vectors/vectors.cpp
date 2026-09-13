@@ -24,6 +24,14 @@ void vector_experiment(){
 	}
 }
 
+void vector_insert(){
+	std::vector<int> numbers{0,1};
+	numbers.insert(numbers.begin(), -123);
+	for (const auto number:numbers){
+		std::cout << number << '\n';
+	}
+}
+
 int main(){
 	std::cout << "Please enter some numbers:\n "; 
 	std::array<double, 5u> array_numbers{};
@@ -41,4 +49,5 @@ int main(){
 		++count;
 	}
 	vector_experiment();
+	vector_insert();
 }
