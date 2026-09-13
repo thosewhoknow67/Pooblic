@@ -4,7 +4,7 @@
 #include <limits>
 
 std::expected<double, std::string> get_number(std::istream & input){
-	double number {};
+	double number{};
 	input >> number;
 	if (input){
 		return number;
@@ -22,13 +22,22 @@ void vector_insert(){
 	}
 }
 
+void vector_delete(){
+	std::vector numbers{1.0,2.4,3.6,4.3,5.4};
+	numbers.erase(numbers.begin());
+	numbers.erase(numbers.begin()+1, numbers.begin()+2);
+	for (const auto number: numbers){
+		std::cout << number << '\n';
+	}
+}
+
 int main(){
 	std::cout << "Please enter some numbers:\n ";
 	std::vector<double> numbers{};
         auto number = get_number(std::cin);
         while (number.has_value()){
 		numbers.push_back(number.value());
-		std::cout << number << '\n';
+		std::cout << number.value() << '\n';
 		number = get_number(std::cin);
 	}
 	std::cout << number.error() << '\n';
@@ -37,4 +46,5 @@ int main(){
 	for (const auto number: numbers){
 		std::cout << number << '\n';
 	}
+	vector_delete();
 }
