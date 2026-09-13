@@ -23,22 +23,6 @@ void vector_experiment(){
 		std::cout << number << '\n';
 	}
 }
-void show_numbers(const std::array<double,5u> & array){
-	for (const auto number: array){
-		std::cout << number << '\n';
-	}
-}
-
-void max_numbers(const std::array<double,5u> & array){
-	double biggest = array[0];
-	for (const auto number: array){
-		if (number > biggest){
-			biggest = number;
-		}						
-	}
-	std::cout << "The biggest number was " << biggest << '\n';
-}
-
 
 int main(){
 	std::cout << "Please enter some numbers:\n "; 
