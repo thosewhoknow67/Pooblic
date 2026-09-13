@@ -18,6 +18,7 @@ std::expected<double, std::string> get_number(std::istream & input){
 
 void vector_experiment(){
 	std::vector numbers {0,1};
+	numbers.push_back(-123);
 	for (const auto number: numbers){
 		std::cout << number << '\n';
 	}
