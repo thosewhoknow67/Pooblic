@@ -1,9 +1,7 @@
 #include <vector>
 #include <expected>
-#include <array>
 #include <iostream>
 #include <limits>
-#include <string>
 
 std::expected<double, std::string> get_number(std::istream & input){
 	double number {};
@@ -16,14 +14,6 @@ std::expected<double, std::string> get_number(std::istream & input){
 	return std::unexpected{"That's not a number"};	
 }
 
-void vector_experiment(){
-	std::vector numbers {0,1};
-	numbers.push_back(-123);
-	for (const auto number: numbers){
-		std::cout << number << '\n';
-	}
-}
-
 void vector_insert(){
 	std::vector<int> numbers{0,1};
 	numbers.insert(numbers.begin(), -123);
@@ -33,21 +23,18 @@ void vector_insert(){
 }
 
 int main(){
-	std::cout << "Please enter some numbers:\n "; 
-	std::array<double, 5u> array_numbers{};
-	size_t count{0u};
-	while (count < array_numbers.size()){
-		std::cout << '>';
-		auto number = get_number(std::cin);
-		if (number.has_value()){
-			array_numbers[count] = number.value();
-		        std::cout << "Your number was " << number.value() << '\n';
-		}
-		else { 
-			std::cout << number.error() << '\n';	
-		}
-		++count;
+	std::cout << "Please enter some numbers:\n ";
+	std::vector<double> numbers{};
+        auto number = get_number(std::cin);
+        while (number.has_value()){
+		numbers.push_back(number.value());
+		std::cout << number << '\n';
+		number = get_number(std::cin);
 	}
-	vector_experiment();
-	vector_insert();
+	std::cout << number.error() << '\n';
+
+	std::cout << "You entered\n";
+	for (const auto number: numbers){
+		std::cout << number << '\n';
+	}
 }
