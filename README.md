@@ -47,7 +47,11 @@ Using `g++`:
 ```bash
 g++ input.cpp -o input.exe
 ```
+Certain features can only be executable utilising C++26, compile for such features as such:
 
+```bash
+g++ -std=c++26 input.cpp -o input.exe
+```
 Run the compiled program:
 
 ```powershell
