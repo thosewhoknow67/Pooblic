@@ -1,11 +1,15 @@
 #include <iostream>
 #include <limits>
 int main(){
+	
+	//Simple i/o
        	std::cout << "What is your age?\n";
        	double  age{}, number{};
 	std::cin >> age; 
         std::cout << "What is your favourite number?\n";
 	std::cin >> number;
+	
+	//Check for unused input
 	if (!std::cin.eof() && std::cin.peek() != '\n'){
 		std::cout << "There was unused input\n";
 	}
