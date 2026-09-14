@@ -35,7 +35,7 @@ void max_numbers(const std::array<double,5u> & array){
 
 
 int main(){
-	
+        //Simple i/o	
 	std::cout << "Please enter some numbers:\n "; 
 	std::array<double, 5u> array_numbers{};
 	size_t count{0u};
