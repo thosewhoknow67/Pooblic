@@ -17,6 +17,8 @@ double get_number(std::istream & input){
 }
 
 int main(){
+
+	//Exception handling
 	try{
 		std::cout << "Please enter a number: ";	
 		double number = get_number(std::cin);
