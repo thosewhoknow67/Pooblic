@@ -3,6 +3,7 @@
 #include <iostream>
 #include <limits>
 
+//get_number function
 std::expected<double, std::string> get_number(std::istream & input){
 	double number {};
 	input >> number; 
@@ -14,12 +15,14 @@ std::expected<double, std::string> get_number(std::istream & input){
         return std::unexpected{"That's not a number"};	
 }
 
+//show_numbers function
 void show_numbers(const std::array<double,5u> & array){
 	for (const auto number: array){
 		std::cout << number << '\n';
 	}
 }
 
+//max_numbers function
 void max_numbers(const std::array<double,5u> & array){
 	double biggest = array[0];
 	for (const auto number: array){
@@ -32,6 +35,7 @@ void max_numbers(const std::array<double,5u> & array){
 
 
 int main(){
+	
 	std::cout << "Please enter some numbers:\n "; 
 	std::array<double, 5u> array_numbers{};
 	size_t count{0u};
