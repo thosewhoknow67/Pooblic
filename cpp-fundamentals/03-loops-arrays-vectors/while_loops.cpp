@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 
+//get_number function
 std::expected<double, std::string> get_number(std::istream & input){
 	double number{};
 	input >> number;
@@ -10,6 +11,7 @@ std::expected<double, std::string> get_number(std::istream & input){
 	}
 	return std::unexpected{"That's not a number!\n"};
 }
+//main code
 int main(){
 	std::cout << "Please enter a number: \n";
 	while (true){
