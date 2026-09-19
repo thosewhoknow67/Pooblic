@@ -51,7 +51,8 @@ int main(){
 			std::cout << number.error() << '\n';	
 		}
 		++count;
-	}
+	}	
+	//function execution
 	show_numbers(array_numbers);
 	max_numbers(array_numbers);
 }
